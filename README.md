@@ -50,9 +50,7 @@ To build from source, clone the latest version from this repository into your ca
 Describe the quickest way to run this software, for example:
 
 Run the force_ros_node, which is ready to read the info written by the ESP32.
-    rosrun 3-axis_force_sensor force_ros_node
-
-
+    rosrun 3-axis_force_sensor force_ros_node.py
 
 
 ## Config files
@@ -70,16 +68,11 @@ Node2 dummy_test_noded: a test node that you can launch if you want to test the 
 
 ### ADMITTANCE_CONTROLLER
 
-#### Subscribed Topics
+#### Published Topics
 
 * **`/Force`** ([geometry_msgs/Twist])
 
-	Where the reading of the force sensor will be published.
-
-
-#### Published Topics
-
-* **`/Vel`** ([geometry_msgs/Twist])
+	Where the reading of the force sensor will be published. Before reading the serial port information
 
 
 
