@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>3-axis_force_sensor_ESP32</name>
+  <version>0.0.0</version>
+  <description>The 3-axis force sensor package</description>
+
+
+  <maintainer email="vrosillo1110@gmail.com">victor</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>dynamic_reconfigure</depend>
+  <depend>rosserial_arduino</depend>
+
+  <test_depend>rosunit</test_depend>
+
+
+  <export>
+
+  </export>
+</package>
