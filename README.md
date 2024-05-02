@@ -67,7 +67,7 @@ Node1 admittance_controller_node: an admittance controller for a 6 DoF parallel 
 
 Node2 dummy_test_noded: a test node that you can launch if you want to test the admittance controller and check the results.
 
-### ADMITTANCE_CONTROLLER
+### 3-AXIS FORCE SENSOR
 
 #### Published Topics
 
