@@ -50,7 +50,8 @@ To build from source, clone the latest version from this repository into your ca
 Describe the quickest way to run this software, for example:
 
 Run the force_ros_node, which is ready to read the info written by the ESP32.
-    rosrun 3-axis_force_sensor force_ros_node.py
+
+	rosrun 3-axis_force_sensor_ESP32 force_ros_node.py
 
 
 ## Config files
