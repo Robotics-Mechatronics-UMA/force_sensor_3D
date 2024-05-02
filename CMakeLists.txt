@@ -1,24 +1,17 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(3-axis_force_sensor_ESP32)
 
-add_compile_options(-std=c++11)
-
-set(${PROJECT_NAME}_DEPENDS
-  #Package dependencies
+find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   sensor_msgs
   geometry_msgs
 )
 
-find_package(catkin REQUIRED COMPONENTS
-  ${${PROJECT_NAME}_DEPENDS}
-)
+catkin_python_setup()
 
 catkin_package(
-  # INCLUDE_DIRS include
-  LIBRARIES ${PROJECT_NAME}
-  CATKIN_DEPENDS ${${PROJECT_NAME}_DEPENDS}
+  CATKIN_DEPENDS rospy std_msgs sensor_msgs geometry_msgs
 )
 
 include_directories(
@@ -26,8 +19,8 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-## Create libraries
-
-## Create executables (nodes)
-
-
+catkin_install_python(
+  PROGRAMS
+    scripts/force_ros_node.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)

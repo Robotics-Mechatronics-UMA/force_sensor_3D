@@ -7,12 +7,12 @@ from std_msgs.msg import Float32
 from geometry_msgs.msg import Twist
 import serial
 
-#Configure serial port
+#Configure serial port, write the port where you've connected the Micro
 serial_port = serial.Serial('/dev/ttyUSBO', 115200)
 
 #Node function read serial port info
 def NodeControl():
-    rospy.init_node('ESP32_node')
+    rospy.init_node('force_ros_node')
     force_pub = rospy.Publisher('Force', Twist, queue_size=10)
     rate = rospy.Rate(100) #Publish frecuency
     
