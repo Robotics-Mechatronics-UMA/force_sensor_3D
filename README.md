@@ -33,6 +33,11 @@ Use `rosdep`:
 
 	sudo rosdep install --from-paths src
 
+To make arduino libraries work, also install the relative dependencies:
+```bash
+sudo apt install ros-$ROS_DISTRO-rosserial-arduino ros-$ROS_DISTRO-rosserial
+```
+
 ### Building from Source
 
 #### Building
