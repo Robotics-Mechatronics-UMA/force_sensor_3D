@@ -6,12 +6,11 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   sensor_msgs
   geometry_msgs
+  rosserial_arduino
 )
 
-catkin_python_setup()
-
 catkin_package(
-  CATKIN_DEPENDS rospy std_msgs sensor_msgs geometry_msgs
+  CATKIN_DEPENDS rospy std_msgs sensor_msgs geometry_msgs rosserial_arduino
 )
 
 include_directories(
@@ -19,8 +18,3 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-catkin_install_python(
-  PROGRAMS
-    scripts/force_ros_node.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
