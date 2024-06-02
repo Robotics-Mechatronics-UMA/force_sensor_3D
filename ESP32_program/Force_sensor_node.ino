@@ -69,6 +69,8 @@ void loop() {
   force_pub.publish(&Bits);
 
   delay(10); //0.01 s //100Hz
+
+  ros::spinOnce();
 }
 
 // Linear regression of data in bits
