@@ -3,8 +3,11 @@
 #include <ros.h>
 #include <geometry_msgs/Twist.h>
 #include <geometry_msgs/Vector3.h>
+#include <Tare_Sensor/Tare_srv.h>
 
 ros::NodeHandle nh;
+
+using Tare_srv = Tare_Sensor::Tare_srv;
 
 // Create message
 geometry_msgs::Vector3 Force;
@@ -28,14 +31,38 @@ float bias_x = 0;
 float bias_y = 0;
 float bias_z = 0;
 
+//
+long bits_x = 0;
+long bits_y = 0;
+long bits_z = 0;
+
 // Create 3 load cells
 HX711 LCx;
 HX711 LCy;
 HX711 LCz;
 
+
+
 // Timer Global variables
 hw_timer_t *timer = NULL;
 volatile bool timer_flag = false; // Timer flag
+
+
+//Tare service Callback
+void Tare_Callback(const Tare_srv::Request &req, Tare_srv::Response &res){
+
+  //Read bits 
+  long bits_x_tare = LCx.read_average(10);
+  long bits_y_tare = LCy.read_average(10);
+  long bits_z_tare = LCz.read_average(10);
+
+  res.bits_x = bits_x_tare; 
+  res.bits_y = bits_y_tare; 
+  res.bits_z = bits_z_tare;
+
+  nh.loginfo("Waiting for tare ...");
+  
+}
 
 // Function to convert bits to force
 float bits2force_x(long bits, float bias) {
@@ -52,19 +79,26 @@ float bits2force_z(long bits, float bias) {
   float Force_z = pdtez * bits + bias;
   return Force_z;
 }
-//
-//// Bias callback
+
+
+// Bias callback
 void biasCallback(const geometry_msgs::Vector3 &bias_msg) {
   bias_x = bias_msg.x;
   bias_y = bias_msg.y;
   bias_z = bias_msg.z;
+
+  nh.loginfo("Tare process has been succesfully completed");
 }
+
 
 //Define publisher
 ros::Publisher force_pub("/Force", &Force);
 
 ////Define tare subscriber
-ros::Subscriber<geometry_msgs::Vector3> bias_sub("/bias", &biasCallback);
+ros::Subscriber<geometry_msgs::Vector3> bias_sub("/Tare", &biasCallback);
+
+ros::ServiceServer<Tare_srv::Request, Tare_srv::Response> tare_srv("Tare_Service", &Tare_Callback);
+
 
 
 // Timer interrupt handler
@@ -76,9 +110,12 @@ void setup() {
   // Initialize node
   nh.initNode();
   
-  // Advertise publisher and subscribe to bias topic
+  // Initialize publisher and subscriber
   nh.advertise(force_pub);
   nh.subscribe(bias_sub);
+
+  //Initialize service
+  nh.advertiseService(tare_srv);
 
   // Set baudrate to 115200
   nh.getHardware()->setBaud(115200);
@@ -111,9 +148,9 @@ void loop() {
   
   if (timer_flag) {
     // Read bits from load cells
-    long bits_x = LCx.read();
-    long bits_y = LCy.read();
-    long bits_z = LCz.read();
+    bits_x = LCx.read();
+    bits_y = LCy.read();
+    bits_z = LCz.read();
   
     // Convert bits to force
     Force.x = bits2force_x(bits_x, bias_x);
