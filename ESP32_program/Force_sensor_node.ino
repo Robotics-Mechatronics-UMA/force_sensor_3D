@@ -3,11 +3,11 @@
 #include <ros.h>
 #include <geometry_msgs/Twist.h>
 #include <geometry_msgs/Vector3.h>
-#include <Tare_Sensor/Tare_srv.h>
+#include <force_sensor_3D/tare_srv.h>
 
 ros::NodeHandle nh;
 
-using Tare_srv = Tare_Sensor::Tare_srv;
+using Tare_srv = force_sensor_3D::tare_srv;
 
 // Create message
 geometry_msgs::Vector3 Force;
