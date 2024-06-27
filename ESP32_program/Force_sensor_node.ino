@@ -138,7 +138,7 @@ void setup() {
   // Configure Timer0 for 10 Hz interrupt
   timer = timerBegin(0, 80, true); // Timer0 with prescaler 80 (80MHz-ESP32)
   timerAttachInterrupt(timer, &timerInterrupt, true); // Attach interrupt handler
-  timerAlarmWrite(timer, 100000, true); // 100000us (10ms), true for periodic alarm
+  timerAlarmWrite(timer, 12500, true); // 100000us (10ms), true for periodic alarm
   timerAlarmEnable(timer); // Enable timer
   
 
