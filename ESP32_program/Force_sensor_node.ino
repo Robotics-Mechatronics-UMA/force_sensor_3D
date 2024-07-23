@@ -22,9 +22,9 @@ const int SCKY = 18;
 const int SCKZ = 2;
 
 // Slopes
-const float pdtex = 2.6025e-5;
+const float pdtex = -2.6025e-5;
 const float pdtey = 2.3369e-5;
-const float pdtez = -2.887e-5;
+const float pdtez = 2.887e-5;
 
 // Initial values
 float bias_x = 0;
