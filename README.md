@@ -134,7 +134,7 @@ Here is the link to view the sensor assembly and each of the components: https:/
 
 ### Exploded view of the sensor
 
-![Force sensor exploded](exploded_view.jpg)
+![Force sensor exploded](images/exploded_view.jpg)
 
 
 ## Bugs & Feature Requests
