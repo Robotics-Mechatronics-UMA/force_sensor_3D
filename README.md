@@ -4,7 +4,7 @@
 
 This package contains a 3-axis force sensor for the EE of a 3-DoF manipulator
 
-**Keywords:** ESP32, Force, Onshape
+**Keywords:** ESP32, Force, Onshape, Arduino IDE
 
 ### License
 
