@@ -2,7 +2,7 @@
 
 ## Overview
 
-This package contains a 3-axis force sensor for the EE of a 3-DoF manipulator
+This package contains a 3-axis force sensor for the EE of a 3-DoF manipulator.
 
 **Keywords:** ESP32, Force, Onshape, Arduino IDE
 
@@ -22,12 +22,12 @@ Maintainer: Victor Rosillo Suero, vrosillo1110@gmail.com**
 ### Publications
 
 Bachelor's Thesis: Adaptive control of a lightweight three-degree-of-freedom parallel
-manipulator
+manipulator.
 
 ### Force sensor 
 
 3 degrees of freedom force sensor designed and manufactured by the author of this repository.
-es
+
 ![Force sensor](images/force_sensor.jpg)
 
 ## Prerequisites
