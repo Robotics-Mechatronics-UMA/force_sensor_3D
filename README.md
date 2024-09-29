@@ -96,6 +96,8 @@ Once uploaded, the code will run on the ESP32.
 ## Nodes
 * **`force_sensor_node`**
 
+	This node runs on the microcontroller and is responsible for reading the forces applied to the sensor, publishing data to the `/Force` topic.
+
 	
 
 ## Topics
