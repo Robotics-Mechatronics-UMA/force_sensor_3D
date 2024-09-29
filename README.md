@@ -122,6 +122,19 @@ Once uploaded, the code will run on the ESP32.
 
 ![ROS interface tare](images/Tare_srv.jpg)
 
+
+## CAD model design
+
+![Force sensor views](images/force_sensor_CAD.jpg)
+
+### Onshape
+
+The force sensor has been designed on Onshape, an open source program for CAD design.
+Here is the link to view the sensor assembly and each of the components: https://cad.onshape.com/documents/fbf007bb0a33f73671eeb8c9/w/1809b6ef5af569844b00136c/e/ea449d32f1a0e791a0cf33b8.
+
+##
+
+
 ## Bugs & Feature Requests
 
 ### Common Issues:
