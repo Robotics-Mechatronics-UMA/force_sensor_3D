@@ -1,5 +1,4 @@
 # 3-axis_force_sensor
-Repo for the 3-axis force sensor
 
 ## Overview
 
