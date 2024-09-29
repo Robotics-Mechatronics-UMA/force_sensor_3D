@@ -132,7 +132,9 @@ Once uploaded, the code will run on the ESP32.
 The force sensor has been designed on Onshape, an open source program for CAD design.
 Here is the link to view the sensor assembly and each of the components: https://cad.onshape.com/documents/fbf007bb0a33f73671eeb8c9/w/1809b6ef5af569844b00136c/e/ea449d32f1a0e791a0cf33b8.
 
-##
+### Exploded view of the sensor
+
+![Force sensor exploded](exploded_view.jpg)
 
 
 ## Bugs & Feature Requests
