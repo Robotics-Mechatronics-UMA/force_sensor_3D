@@ -28,7 +28,7 @@ manipulator
 ### Force sensor 
 
 3 degrees of freedom force sensor designed and manufactured by the author of this repository.
-
+es
 ![Force sensor](images/force_sensor.jpg)
 
 ## Prerequisites
@@ -110,14 +110,17 @@ Once uploaded, the code will run on the ESP32.
 
 * **`/Tare`** ([geometry_msgs/Vector3])
 
-	Where bias 
+	Where bias is recieved to achieve the sensor's tare.
 
+## Schemes
 
-##
+### ROS communication scheme
 
+![ROS interface](images/ROS_scheme.jpg)
 
+### Tare service
 
-
+![ROS interface tare](images/Tare_srv.jpg)
 
 ## Bugs & Feature Requests
 
